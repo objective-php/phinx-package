@@ -10,84 +10,41 @@ use ObjectivePHP\Config\SingleValueDirective;
  */
 class PhinxConfig extends SingleValueDirective
 {
-    /** @var  string[] */
-    protected $paths;
-
-    /** @var array */
-    protected $environments;
+    /** @var  string */
+    protected $filePath;
 
     /**
      * PhinxConfig constructor.
      *
-     * @param array $params params used by the config of Phinx
+     * @param string|null $configFile
      */
-    public function __construct(array $params = [])
+    public function __construct(string $configFile = null)
     {
-        parent::__construct($params);
+        parent::__construct($configFile);
     }
 
     /**
-     * Add a migration path
+     * Get Path
      *
-     * @param string $name
-     * @param string $path
-     *
-     * @return $this
+     * @return string
      */
-    public function addPath(string $name, string $path)
+    public function getFilePath(): string
     {
-        $this->paths[$name] = $path;
-
-        $this->value['paths'] = $this->paths;
-
-        return $this;
+        return $this->filePath;
     }
 
     /**
-     * Get Paths
+     * Set Path
      *
-     * @return \string[]
+     * @param string $filePath
+     *
+     * @return PhinxConfig
      */
-    public function getPaths(): array
+    public function setFilePath(string $filePath): PhinxConfig
     {
-        return $this->paths;
-    }
+        $this->filePath = $filePath;
 
-    /**
-     * Set Paths
-     *
-     * @param \string[] $paths
-     *
-     * @return $this
-     */
-    public function setPaths(array $paths)
-    {
-        $this->paths = $paths;
-        return $this;
-    }
-
-    /**
-     * Get Environments
-     *
-     * @return array
-     */
-    public function getEnvironments(): array
-    {
-        return $this->environments;
-    }
-
-    /**
-     * Set Environments
-     *
-     * @param array $environments
-     *
-     * @return $this
-     */
-    public function setEnvironments(array $environments)
-    {
-        $this->environments = $environments;
-
-        $this->value['environments'] = $this->environments;
+        $this->value = $filePath;
 
         return $this;
     }

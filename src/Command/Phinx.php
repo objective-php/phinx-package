@@ -4,6 +4,7 @@ namespace ObjectivePHP\Package\Phinx\Command;
 use ObjectivePHP\Application\ApplicationInterface;
 use ObjectivePHP\Cli\Action\AbstractCliAction;
 use ObjectivePHP\Package\Phinx\Config\PhinxConfig;
+use ObjectivePHP\Package\Phinx\Exception\PhinxException;
 use Phinx\Config\Config;
 use Phinx\Console\Command\AbstractCommand;
 use Phinx\Console\PhinxApplication;
@@ -27,12 +28,23 @@ class Phinx extends AbstractCliAction
 
     /**
      * @param ApplicationInterface $application
+     *
      * @return mixed|void
+     *
+     * @throws PhinxException
      */
     public function run(ApplicationInterface $application)
     {
-        $phinxConfig = $application->getConfig()->get(PhinxConfig::class);
-        $config = new Config($phinxConfig);
+        $phinxConfigFile = $application->getConfig()->get(PhinxConfig::class);
+        $phinxConfigFile = $phinxConfigFile ?? 'phinx.php';
+
+        if (is_file($phinxConfigFile)) {
+            $config = include $phinxConfigFile;
+        } else {
+            throw new PhinxException('No phinx config file found!');
+        }
+        
+        $config = new Config($config);
 
         $phinxApplication = new PhinxApplication();
 
