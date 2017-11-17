@@ -20,7 +20,7 @@
     "objective-php/application": "^1.0.6",
     "objective-php/cli": "^1.0.4",
       "objective-php/router": "~1.0.0",
-    "robmorgan/phinx": "^0.9.0"
+    "robmorgan/phinx": "^0.8.1"
   },
   "require-dev": {
       "phpunit/phpunit": "5.*"
