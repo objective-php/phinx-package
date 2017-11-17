@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff58334c07bc0d55503bd58d7234ac76",
+    "content-hash": "be504734e4e3130121bec797a49f6560",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1328,16 +1328,16 @@
         },
         {
             "name": "robmorgan/phinx",
-            "version": "v0.9.1",
+            "version": "v0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/phinx.git",
-                "reference": "c1d51fd065af3aa3fabd684ce561cd9c38281eb8"
+                "reference": "7a19de5bebc59321edd9613bc2a667e7f96224ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/phinx/zipball/c1d51fd065af3aa3fabd684ce561cd9c38281eb8",
-                "reference": "c1d51fd065af3aa3fabd684ce561cd9c38281eb8",
+                "url": "https://api.github.com/repos/cakephp/phinx/zipball/7a19de5bebc59321edd9613bc2a667e7f96224ec",
+                "reference": "7a19de5bebc59321edd9613bc2a667e7f96224ec",
                 "shasum": ""
             },
             "require": {
@@ -1379,10 +1379,6 @@
                     "name": "Richard Quadling",
                     "email": "rquadling@gmail.com",
                     "role": "Developer"
-                },
-                {
-                    "name": "CakePHP Community",
-                    "homepage": "https://github.com/cakephp/phinx/graphs/contributors"
                 }
             ],
             "description": "Phinx makes it ridiculously easy to manage the database migrations for your PHP app.",
@@ -1394,7 +1390,7 @@
                 "migrations",
                 "phinx"
             ],
-            "time": "2017-09-09T13:54:33+00:00"
+            "time": "2017-06-05T13:30:19+00:00"
         },
         {
             "name": "seld/cli-prompt",
